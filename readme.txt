@@ -1,4 +1,3 @@
-Hello World Git is a free software
-﻿Hello World
-xinzeng
+﻿git版本库：
+	WEB、JAVA
 
