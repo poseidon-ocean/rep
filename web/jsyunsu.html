@@ -4,11 +4,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
-  <title>Document</title>
+  <title>javascript匀速运动</title>
   <style>
 	*{padding:0;margin:0}
 	
-	#box{width:100px;height:160px;background:red;position:absolute;}
+	#box{width:100px;height:100px;background:red;position:absolute;}
   </style>
  </head>
  <body>
@@ -34,25 +34,17 @@
 		
 		var i = 0;
 		var timer = setInterval(function(){
-			start = getCss(boxdom,"left");
-			speed = (distance - start)*0.2;
-			
-			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
 			
 			if(start == distance){
 				clearInterval(timer);
 				boxdom["style"]["left"] = distance + "px";
 			}else{
+				start = start + speed;
 				boxdom["style"]["left"] = start + speed +"px";
 			}
 		},30);
 	}
 	
-	//获取CSS属性值
-	function getCss(obj,attr){
-		var val = obj.currentStyle ? obj.currentStyle[attr] : window.getComputedStyle(obj,null)[attr];
-		return val == "auto" ? 0 : parseInt(val);
-	}
 	</script>
 	
  </body>
